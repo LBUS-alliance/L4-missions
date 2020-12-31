@@ -39,6 +39,29 @@ body {
 	cursor: pointer;
 }
 
+.clipboard {
+	height: 20px;
+    width: 20px;
+    vertical-align: text-bottom;
+    float: right;
+    margin-right: 25px;
+}
+.clipboard:hover {
+	cursor: pointer;
+}
+
+.copy-tooltip {
+	font-size: 70%;
+	width: 120px;
+	background-color: #555;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px;
+	z-index: 1;
+	transition: opacity 0.3s;
+}
+
 a,
 a.visited {
 	color: inherit;
@@ -279,6 +302,9 @@ ol > li {
 
 .toggle > li > details > summary {
 	margin-left: -1.1em;
+}
+.toggle > li > details > summary:hover {
+    cursor: pointer;
 }
 
 .selected-value {
