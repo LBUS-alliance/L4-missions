@@ -21,7 +21,6 @@ body {
 
 body {
 	line-height: 1.5;
-	white-space: pre-wrap;
 }
 
 .page-body {
@@ -115,6 +114,7 @@ h3 {
 .callout {
 	border-radius: 3px;
 	padding: 1rem;
+	white-space: normal !important;
 }
 
 figure {

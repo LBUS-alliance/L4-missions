@@ -41,5 +41,19 @@ const toggleColorMode = () => {
     $('#copy-caracal-t1').hover(tooltipHoverIn('caracal-t1'), tooltipHoverOut('caracal-t1'));
     $('#copy-caracal-t2').hover(tooltipHoverIn('caracal-t2'), tooltipHoverOut('caracal-t2'));
     $('#copy-caracal-t2-heavies').hover(tooltipHoverIn('caracal-t2-heavies'), tooltipHoverOut('caracal-t2-heavies'));
-    $('#copy-osprey-t2').hover(tooltipHoverIn('osprey-t2'), tooltipHoverOut('osprey-t2'));    
+    $('#copy-osprey-t2').hover(tooltipHoverIn('osprey-t2'), tooltipHoverOut('osprey-t2'));
+
+    const fits = {
+        'caracal-t1': caracal_t1,
+        'caracal-t2': caracal_t2,
+        'caracal-t2-heavies': caracal_t2_heavies,
+        'osprey-t2': osprey_t2
+    };
+    for (const fit in fits) {
+        let fit_html = '';
+        for (const line of fits[fit].split("\n")) {
+            fit_html += line + '<br>';
+        }
+        $(`#${fit}`).html(fit_html);
+    }
 })();
