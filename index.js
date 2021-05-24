@@ -1,5 +1,12 @@
+const fits = {
+    'caracal-t1': caracal_t1,
+    'caracal-t2': caracal_t2,
+    'caracal-t2-heavies': caracal_t2_heavies,
+    'osprey-t2': osprey_t2
+};
+
 const copyFit = id => {
-    var text = document.getElementById(id).innerHTML;
+    var text = fits[id];
     navigator.clipboard.writeText(text);
 
     $(`#tooltip-${id}`).html('Copied!');
@@ -43,12 +50,6 @@ const toggleColorMode = () => {
     $('#copy-caracal-t2-heavies').hover(tooltipHoverIn('caracal-t2-heavies'), tooltipHoverOut('caracal-t2-heavies'));
     $('#copy-osprey-t2').hover(tooltipHoverIn('osprey-t2'), tooltipHoverOut('osprey-t2'));
 
-    const fits = {
-        'caracal-t1': caracal_t1,
-        'caracal-t2': caracal_t2,
-        'caracal-t2-heavies': caracal_t2_heavies,
-        'osprey-t2': osprey_t2
-    };
     for (const fit in fits) {
         let fit_html = '';
         for (const line of fits[fit].split("\n")) {
